@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Jay FutureTech Solutions | Innovative Technology Services</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        :root {
+            --primary: #8b5cf6;
+            --secondary: #10b981;
+            --dark: #0f172a;
+            --light: #1e293b;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: #e2e8f0;
+        }
+
+        .gradient-text {
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-gradient {
+            background: linear-gradient(135deg, #6d28d930 0%, #10b98130 100%);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .nav-container {
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            background-color: rgba(15, 23, 42, 0.9);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .glow-effect {
+            box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
+        }
+
+        /* Tech UI Elements */
+        .tech-grid {
+            background-image: 
+                linear-gradient(rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.9)),
+                url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 0c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43 7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 0c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM11 68c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 0c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43 7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 0c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3z' fill='%238b5cf6' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        /* WhatsApp button with animation */
+        .whatsapp-btn {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 100;
+            width: 60px;
+            height: 60px;
+            background-color: #25D366;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.1) translateY(-5px);
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.7);
+            animation: pulse 1.5s infinite;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0px); }
+        }
+
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideUp {
+            from { 
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to { 
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        .slide-up {
+            animation: slideUp 0.8s ease-out;
+        }
+
+        /* Input focus styling */
+        .input-focus:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
+        }
+
+        /* Service card icon animation */
+        .service-icon {
+            transition: all 0.3s ease;
+        }
+        
+        .card-hover:hover .service-icon {
+            transform: scale(1.2);
+            color: var(--primary);
+        }
+
+        /* Testimonial rating stars */
+        .rating-stars {
+            color: #f59e0b;
+        }
+    </style>
+</head>
+<body class="dark:bg-gray-900">
+    <!-- Cookie Consent Banner -->
+    <div id="cookieConsent" class="fixed bottom-0 left-0 right-0 bg-gray-800 text-white p-4 shadow-lg z-50 hidden">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between">
+            <p class="text-sm md:text-base mb-4 md:mb-0">
+                We use cookies to enhance your experience. By continuing to visit this site, you agree to our use of cookies.
+            </p>
+            <div class="flex space-x-4">
+                <button id="cookieAccept" class="bg-violet-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-violet-700 transition-all">
+                    Accept
+                </button>
+                <button id="cookieReject" class="border border-gray-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-gray-700 transition-all">
+                    Reject
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- WhatsApp Button -->
+    <a href="https://wa.me/917265064277?text=Hi%20Jay%20FutureTech%20Solutions%2C%20I%20visited%20your%20website%20and%20would%20like%20to%20know%20more" class="whatsapp-btn" target="_blank" rel="noopener noreferrer" title="Message us on WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+        <span class="sr-only">WhatsApp</span>
+    </a>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-40 nav-container">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c4c2ea4f-0191-4765-9d52-fc905ea9a06e.png" alt="Jay FutureTech Logo" class="h-8 w-8 mr-2 rounded-full">
+                        <span class="text-2xl font-bold gradient-text">Jay FutureTech</span>
+                    </div>
+                    <div class="hidden md:block">
+                        <div class="ml-10 flex items-baseline space-x-4">
+                            <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors">Home</a>
+                            <a href="#services" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors">Services</a>
+                            <a href="#technologies" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors">Technologies</a>
+                            <a href="#testimonials" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors">Testimonials</a>
+                            <a href="#contact" class="px-3 py-2 rounded-md text-sm font-medium text-gray-300 hover:text-white transition-colors">Contact</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="hidden md:block flex space-x-3">
+                    <button class="bg-violet-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-violet-700 transition-all glow-effect">
+                        Get Started
+                    </button>
+                    <a href="https://wa.me/917265064277?text=Hi%20Jay%20FutureTech%2C%20I'm%20interested%20in%20the%20job%20opportunity" class="bg-emerald-500 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-emerald-600 transition-all glow-effect">
+                        <i class="fas fa-briefcase mr-2"></i>We're Hiring
+                    </a>
+                </div>
+                <!-- Mobile menu button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-300 hover:text-white focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-800 shadow-lg rounded-lg mx-4 mt-2 py-2 border border-gray-700">
+            <a href="#" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 rounded-md transition-colors">Home</a>
+            <a href="#services" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 rounded-md transition-colors">Services</a>
+            <a href="#technologies" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 rounded-md transition-colors">Technologies</a>
+            <a href="#testimonials" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 rounded-md transition-colors">Testimonials</a>
+            <a href="#contact" class="block px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 rounded-md transition-colors">Contact</a>
+            <div class="px-4 py-3">
+                <button class="w-full bg-violet-600 text-white px-4 py-2 rounded-md text-sm font-medium hover:bg-violet-700 transition-all">
+                    Get Started
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-screen flex items-center justify-center pt-24 hero-gradient tech-grid">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div class="space-y-6">
+                    <h1 class="text-5xl font-bold leading-tight slide-up">
+                        Transforming <span class="gradient-text">Businesses</span> Through <span class="gradient-text">Technology</span>
+                    </h1>
+                    <p class="text-lg text-gray-400 slide-up" style="animation-delay: 0.2s;">
+                        Jay FutureTech Solutions delivers cutting-edge digital transformation services with offices in Rajkot and clients worldwide.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 pt-4">
+                        <a href="#contact" class="bg-violet-600 text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-violet-700 transition-all glow-effect slide-up" style="animation-delay: 0.4s;">
+                            Get Started
+                        </a>
+                        <a href="#services" class="border border-gray-700 text-gray-300 px-6 py-3 rounded-md text-sm font-medium hover:border-violet-400 hover:text-white transition-all slide-up" style="animation-delay: 0.4s;">
+                            Our Services
+                        </a>
+                    </div>
+                </div>
+                <div class="relative flex justify-center fade-in" style="animation-delay: 0.6s;">
+                    <div class="animate-float">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/49470498-6e73-4176-9cf2-7ead1886bfc7.png" alt="Futuristic digital interface with holographic analytics dashboard and AI visualization elements" class="rounded-xl shadow-2xl border border-gray-700" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clients Logo Cloud -->
+    <div class="bg-gray-800 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-center text-gray-400 text-sm font-semibold tracking-wider mb-10">TRUSTED BY INNOVATIVE COMPANIES WORLDWIDE</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 items-center">
+                <div class="col-span-1 flex justify-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/83abb9cd-e5f0-49ac-9578-856468eb02d3.png" alt="TechNova company logo with blue and white geometric design" class="h-12 dark:invert opacity-80 hover:opacity-100 transition-opacity" />
+                </div>
+                <div class="col-span-1 flex justify-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/d4f1768e-4bfb-4b0b-a867-9d788f45e81c.png" alt="InfiniteLoop tech logo with purple gradient infinity symbol" class="h-12 dark:invert opacity-80 hover:opacity-100 transition-opacity" />
+                </div>
+                <div class="col-span-1 flex justify-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3955f59c-7c8a-46fa-80c2-48b46f3a4321.png" alt="DigitalHive logo with honeycomb pattern in orange and black" class="h-12 dark:invert opacity-80 hover:opacity-100 transition-opacity" />
+                </div>
+                <div class="col-span-1 flex justify-center">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/18bcc8fc-22bc-4e34-a837-ae75df3c7ec1.png" alt="VertexSolutions logo with green triangle abstract mark" class="h-12 dark:invert opacity-80 hover:opacity-100 transition-opacity" />
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl slide-up">
+                    Our <span class="gradient-text">Specialized Services</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-400 mx-auto slide-up" style="animation-delay: 0.2s;">
+                    End-to-end technology solutions tailored to your business needs
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+                <!-- Web Development -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all card-hover">
+                    <div class="w-14 h-14 bg-gray-700 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-code text-2xl text-violet-400 service-icon"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-white mb-3">Web Development</h3>
+                    <p class="text-gray-400">
+                        Custom, responsive websites and web applications built with modern frameworks like React, Angular, and Vue.js.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>eCommerce Solutions</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>CMS Development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>API Integrations</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#contact" class="text-violet-400 text-sm font-medium hover:text-violet-300 transition-colors inline-flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile App Development -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all card-hover">
+                    <div class="w-14 h-14 bg-gray-700 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-mobile-alt text-2xl text-violet-400 service-icon"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-white mb-3">Mobile Development</h3>
+                    <p class="text-gray-400">
+                        Cross-platform mobile applications for iOS and Android using Flutter and React Native with native performance.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>UI/UX Mobile Design</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>App Store Optimization</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>Enterprise Mobility</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#contact" class="text-violet-400 text-sm font-medium hover:text-violet-300 transition-colors inline-flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- UI/UX Design -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all card-hover">
+                    <div class="w-14 h-14 bg-gray-700 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-paint-brush text-2xl text-violet-400 service-icon"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-white mb-3">UI/UX Design</h3>
+                    <p class="text-gray-400">
+                        Beautiful, intuitive interfaces that enhance user engagement and satisfaction across all platforms.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>User Research & Testing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>Prototyping & Wireframing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>Design Systems</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#contact" class="text-violet-400 text-sm font-medium hover:text-violet-300 transition-colors inline-flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Cloud Solutions -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all card-hover">
+                    <div class="w-14 h-14 bg-gray-700 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-cloud text-2xl text-violet-400 service-icon"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-white mb-3">Cloud Solutions</h3>
+                    <p class="text-gray-400">
+                        Scalable cloud infrastructure and serverless architectures on AWS, Azure, and Google Cloud Platform.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>Cloud Migration</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>DevOps Automation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>Containerization</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#contact" class="text-violet-400 text-sm font-medium hover:text-violet-300 transition-colors inline-flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Digital Marketing -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all card-hover">
+                    <div class="w-14 h-14 bg-gray-700 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-bullseye text-2xl text-violet-400 service-icon"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-white mb-3">Expert Digital Marketing</h3>
+                    <p class="text-gray-400">
+                        Full-funnel digital marketing strategies from SEO and social media to paid advertising and conversion optimization.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>SEO & Content Strategy</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>Social Media Marketing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>PPC Campaign Management</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#contact" class="text-violet-400 text-sm font-medium hover:text-violet-300 transition-colors inline-flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- AI & ML Solutions -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all card-hover">
+                    <div class="w-14 h-14 bg-gray-700 rounded-lg flex items-center justify-center mb-6">
+                        <i class="fas fa-brain text-2xl text-violet-400 service-icon"></i>
+                    </div>
+                    <h3 class="text-lg font-medium text-white mb-3">AI & ML Solutions</h3>
+                    <p class="text-gray-400">
+                        Custom AI models and machine learning solutions to automate processes and extract business insights.
+                    </p>
+                    <ul class="mt-4 space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>Predictive Analytics</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>Natural Language Processing</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-violet-400 mt-1 mr-2 text-xs"></i>
+                            <span>Computer Vision</span>
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <a href="#contact" class="text-violet-400 text-sm font-medium hover:text-violet-300 transition-colors inline-flex items-center">
+                            Learn more <i class="fas fa-arrow-right ml-1 text-xs"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl slide-up">
+                    Our <span class="gradient-text">Tech Stack</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-400 mx-auto slide-up" style="animation-delay: 0.2s;">
+                    We work with cutting-edge technologies to build future-proof solutions
+                </p>
+            </div>
+
+            <div class="grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-6">
+                <div class="col-span-1">
+                <div class="bg-gray-700 p-6 rounded-lg flex flex-col items-center justify-center hover:bg-gray-600 transition-all cursor-pointer">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/58aefe62-b1f4-415b-b131-f8079b2a8b01.png" alt="React JS logo" class="h-12 w-12 mb-3" />
+                    <span class="text-white font-medium">React</span>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg flex flex-col items-center justify-center hover:bg-gray-600 transition-all cursor-pointer">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/4da14111-934b-49cb-8e1b-69ae63efb20c.png" alt="Flutter framework logo" class="h-12 w-12 mb-3" />
+                    <span class="text-white font-medium">Flutter</span>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg flex flex-col items-center justify-center hover:bg-gray-600 transition-all cursor-pointer">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a1b497b9-d6d2-4d1f-ba6c-995799a79558.png" alt="Node JS runtime logo" class="h-12 w-12 mb-3" />
+                    <span class="text-white font-medium">Node.js</span>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg flex flex-col items-center justify-center hover:bg-gray-600 transition-all cursor-pointer">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/764295fa-2a9a-4ba3-89de-ea3180019c64.png" alt="AWS cloud services logo" class="h-12 w-12 mb-3" />
+                    <span class="text-white font-medium">AWS</span>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg flex flex-col items-center justify-center hover:bg-gray-600 transition-all cursor-pointer">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e7f5a706-a8b8-40dd-a983-481bbeb3af3f.png" alt="Python programming language logo" class="h-12 w-12 mb-3" />
+                    <span class="text-white font-medium">Python</span>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg flex flex-col items-center justify-center hover:bg-gray-600 transition-all cursor-pointer">
+                    <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/40369ff8-d927-4feb-9618-53d6ebd5b85b.png" alt="TensorFlow machine learning framework" class="h-12 w-12 mb-3" />
+                    <span class="text-white font-medium">TensorFlow</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl slide-up">
+                    Client <span class="gradient-text">Testimonials</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-400 mx-auto slide-up" style="animation-delay: 0.2s;">
+                    Don't just take our word for it - hear from our clients
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e6deac9c-4350-4205-b4ff-232fa1b46616.png" alt="Sarah Kapoor, Marketing Manager with red lipstick and formal attire" class="w-12 h-12 rounded-full mr-4 object-cover" />
+                        <div>
+                            <h4 class="font-medium text-white">Sarah Kapoor</h4>
+                            <p class="text-sm text-gray-400">Marketing Manager, FinTech Solutions</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">
+                        "Our website traffic increased by 180% after Jay's team redesigned our platform. Their strategic approach to SEO and user experience was exactly what we needed."
+                    </p>
+                    <div class="mt-4 text-yellow-400 rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="ml-2 text-sm text-gray-400">2 weeks ago</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 2 -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all card-hover">
+                    <div class="mb-4">
+                        <h4 class="font-medium text-white">Raj Patel</h4>
+                        <p class="text-sm text-gray-400">Project Lead, EduTech Startup</p>
+                    </div>
+                    <p class="text-gray-300">
+                        "The mobile app developed exceeded our expectations. Some minor delays in delivery, but the end product was worth the wait. Exceptional attention to detail."
+                    </p>
+                    <div class="mt-4 text-yellow-400 rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star text-gray-400"></i>
+                        <span class="ml-2 text-sm text-gray-400">1 month ago</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=200&h=200&q=80" alt="Priya Sharma, businesswoman smiling" class="w-12 h-12 rounded-full mr-4 object-cover border-2 border-violet-400" />
+                        <div>
+                            <h4 class="font-medium text-white">Priya Sharma</h4>
+                            <p class="text-sm text-gray-400">Owner, Handmade Crafts</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">
+                        "As a small business owner, I was nervous about going digital. Jay's team made the process easy and my online sales doubled within 3 months. Highly recommend!"
+                    </p>
+                    <div class="mt-4 text-yellow-400 rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="ml-2 text-sm text-gray-400">2 months ago</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ce8ba04d-5923-4af4-b980-026811d893e5.png" alt="Amit Singh, IT professional with beard and headphones" class="w-12 h-12 rounded-full mr-4 object-cover" />
+                        <div>
+                            <h4 class="font-medium text-white">Amit Singh</h4>
+                            <p class="text-sm text-gray-400">IT Manager, Healthcare Provider</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">
+                        "The cloud migration was executed perfectly, reducing our infrastructure costs by 35%. Documentation could be better, but their technical expertise is top-notch."
+                    </p>
+                    <div class="mt-4 text-yellow-400 rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star text-gray-400"></i>
+                        <span class="ml-2 text-sm text-gray-400">3 months ago</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 5 -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/882edec4-da9f-40e0-8805-428cb85f687a.png" alt="Neha Gupta, young influencer with trendy outfit and makeup" class="w-12 h-12 rounded-full mr-4 object-cover" />
+                        <div>
+                            <h4 class="font-medium text-white">Neha Gupta</h4>
+                            <p class="text-sm text-gray-400">Content Creator</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">
+                        "Amazing rebranding of my online presence! They understood my aesthetic and helped me increase engagement by 220%. Worth every penny."
+                    </p>
+                    <div class="mt-4 text-yellow-400 rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span class="ml-2 text-sm text-gray-400">1 month ago</span>
+                    </div>
+                </div>
+
+                <!-- Testimonial 6 -->
+                <div class="bg-gray-800 p-8 rounded-xl shadow-lg hover:shadow-xl transition-all card-hover">
+                    <div class="flex items-center mb-6">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/ee0b9769-4d05-4ac2-8004-6ab59d35c8ca.png" alt="Vikram Joshi, executive in formal suit with confident expression" class="w-12 h-12 rounded-full mr-4 object-cover" />
+                        <div>
+                            <h4 class="font-medium text-white">Vikram Joshi</h4>
+                            <p class="text-sm text-gray-400">Operations Head, Logistics Firm</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-300">
+                        "Our warehouse management system developed by Jay's team has improved our efficiency by 40%. Took some training to get used to, but now runs perfectly."
+                    </p>
+                    <div class="mt-4 text-yellow-400 rating-stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                        <span class="ml-2 text-sm text-gray-400">4 months ago</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section class="py-20 bg-gray-900">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    Why <span class="gradient-text">Choose Us</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-400 mx-auto">
+                    We stand out from the competition in multiple ways
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-800 p-8 rounded-xl text-center">
+                    <div class="text-5xl text-violet-400 mb-4">🚀</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Cutting-Edge Technology</h3>
+                    <p class="text-gray-400">We use the latest tech stack to ensure your solution is future-proof</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl text-center">
+                    <div class="text-5xl text-violet-400 mb-4">🎯</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Proven Results</h3>
+                    <p class="text-gray-400">92% client satisfaction rate with measurable business impact</p>
+                </div>
+                <div class="bg-gray-800 p-8 rounded-xl text-center">
+                    <div class="text-5xl text-violet-400 mb-4">💼</div>
+                    <h3 class="text-xl font-bold text-white mb-3">Local Presence</h3>
+                    <p class="text-gray-400">Physical office near Saurashtra University for in-person collaboration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Articles Section -->
+    <section class="py-12 md:py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl">
+                    Latest <span class="gradient-text">Tech Insights</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-400 mx-auto">
+                    Stay updated with the latest technology trends and innovations
+                </p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-700 p-6 rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1457305237443-44c3d5a30b89?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300&q=80" alt="AI Technology" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">The Future of AI in Business</h3>
+                    <p class="text-gray-400 mb-4">How artificial intelligence is transforming industries in 2024</p>
+                    <a href="#" class="text-violet-400 hover:text-violet-300 font-medium">Read More →</a>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300&q=80" alt="Web Development" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Modern Web Development Trends</h3>
+                    <p class="text-gray-400 mb-4">Key technologies to watch in frontend and backend development</p>
+                    <a href="#" class="text-violet-400 hover:text-violet-300 font-medium">Read More →</a>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-xl">
+                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=600&h=300&q=80" alt="Digital Marketing" class="w-full h-48 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold text-white mb-2">Digital Marketing Strategies 2024</h3>
+                    <p class="text-gray-400 mb-4">How to maximize ROI from your digital marketing campaigns</p>
+                    <a href="#" class="text-violet-400 hover:text-violet-300 font-medium">Read More →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="py-20 bg-violet-600">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="text-5xl font-bold text-white mb-2">7</div>
+                    <div class="text-violet-100">Active Projects</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold text-white mb-2">13</div>
+                    <div class="text-violet-100">Global Customers</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold text-white mb-2">92%</div>
+                    <div class="text-violet-100">Client Satisfaction</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-5xl font-bold text-white mb-2">24/7</div>
+                    <div class="text-violet-100">Support Available</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-extrabold text-white sm:text-4xl slide-up">
+                    Get In <span class="gradient-text">Touch</span>
+                </h2>
+                <p class="mt-4 max-w-2xl text-xl text-gray-400 mx-auto slide-up" style="animation-delay: 0.2s;">
+                    Have a project in mind? Reach out to us today!
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <h3 class="text-2xl font-bold text-white">Contact Information</h3>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-6 w-6 text-violet-400 mt-1">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-gray-300 font-medium">Our Office</p>
+                            <p class="text-gray-400">304, Tech Plaza, Opposite Saurashtra University<br>University Road, Rajkot, Gujarat - 360005</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-6 w-6 text-violet-400 mt-1">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-gray-300 font-medium">Email</p>
+                            <p class="text-gray-400">goheljay105@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0 h-6 w-6 text-violet-400 mt-1">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="ml-3">
+                            <p class="text-gray-300 font-medium">Phone</p>
+                            <p class="text-gray-400">+91 7265064277</p>
+                        </div>
+                    </div>
+                    <div class="pt-4">
+                        <h4 class="text-lg font-medium text-white mb-4">Working Hours</h4>
+                        <div class="text-gray-400 space-y-1">
+                            <p class="flex justify-between max-w-xs">
+                                <span>Monday - Friday</span>
+                                <span>9:00 AM - 6:00 PM</span>
+                            </p>
+                            <p class="flex justify-between max-w-xs">
+                                <span>Saturday</span>
+                                <span>10:00 AM - 4:00 PM</span>
+                            </p>
+                            <p class="flex justify-between max-w-xs">
+                                <span>Sunday</span>
+                                <span>Closed</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-gray-900 rounded-xl p-8 shadow-lg">
+                    <h3 class="text-2xl font-bold text-white mb-6">Send Us a Message</h3>
+                    <form class="space-y-4" id="contactForm">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-300 mb-2">Full Name</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-violet-500 focus:ring-2 focus:ring-violet-800 text-white transition-all input-focus" placeholder="Your Name" required>
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-300 mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-violet-500 focus:ring-2 focus:ring-violet-800 text-white transition-all input-focus" placeholder="your@email.com" required>
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-medium text-gray-300 mb-2">Phone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-violet-500 focus:ring-2 focus:ring-violet-800 text-white transition-all input-focus" placeholder="+91 00000 00000">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-medium text-gray-300 mb-2">Service Interested In</label>
+                            <select id="service" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-violet-500 focus:ring-2 focus:ring-violet-800 text-white transition-all input-focus">
+                                <option value="">Select a service</option>
+                                <option value="web-dev">Web Development</option>
+                                <option value="mobile-dev">Mobile Development</option>
+                                <option value="ui-ux">UI/UX Design</option>
+                                <option value="cloud">Cloud Solutions</option>
+                                <option value="marketing">Digital Marketing</option>
+                                <option value="ai">AI Solutions</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-300 mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg bg-gray-700 border border-gray-600 focus:border-violet-500 focus:ring-2 focus:ring-violet-800 text-white transition-all input-focus" placeholder="Tell us about your project..." required></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-violet-600 text-white px-6 py-3 rounded-md text-sm font-medium hover:bg-violet-700 transition-all glow-effect">
+                                Send Message
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Jay FutureTech Solutions</h3>
+                    <p class="text-gray-400 mb-4">
+                        Innovating for the future with cutting-edge technology solutions to drive your business growth and digital transformation.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-violet-400 transition-colors">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-violet-400 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-violet-400 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-violet-400 transition-colors">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Quick Links</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-gray-400 hover:text-violet-400 transition-colors">Home</a></li>
+                        <li><a href="#services" class="text-gray-400 hover:text-violet-400 transition-colors">Services</a></li>
+                        <li><a href="#technologies" class="text-gray-400 hover:text-violet-400 transition-colors">Technologies</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-violet-400 transition-colors">Testimonials</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-violet-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-white mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">
+                        Subscribe to our newsletter for the latest updates and tech insights.
+                    </p>
+                    <form class="flex">
+                        <input type="email" placeholder="Your email" class="px-4 py-2 rounded-l-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-violet-500 w-full">
+                        <button type="submit" class="bg-violet-600 text-white px-4 py-2 rounded-r-lg hover:bg-violet-700 transition-colors">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 text-sm">
+                    &copy; 2023 Jay FutureTech Solutions. All rights reserved.
+                </p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-gray-400 hover:text-violet-400 transition-colors text-sm">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-violet-400 transition-colors text-sm">Terms of Service</a>
+                    <a href="#" class="text-gray-400 hover:text-violet-400 transition-colors text-sm">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                if(this.hash) {
+                    e.preventDefault();
+                    document.querySelector(this.hash).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                    
+                    // Close mobile menu if open
+                    document.getElementById('mobile-menu').classList.add('hidden');
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would normally send the form data to your server
+            // For demo, we'll just show an alert
+            // Simple form validation
+            if (name && email && message) {
+                // Show success message
+                const successMsg = document.createElement('div');
+                successMsg.className = 'bg-green-600 text-white p-4 mb-4 rounded-md';
+                successMsg.innerHTML = `
+                    <p>Thanks for your message, ${name}! We'll contact you at ${email} shortly.</p>
+                `;
+                this.parentNode.insertBefore(successMsg, this);
+                
+                // Reset form
+                this.reset();
+                
+                // Remove message after 5 seconds
+                setTimeout(() => successMsg.remove(), 5000);
+            } else {
+                alert('Please fill in all required fields');
+            }
+        });
+
+        // Initialize animations
+        const animateOnScroll = function() {
+            const elements = document.querySelectorAll('.slide-up, .fade-in');
+            
+            elements.forEach(element => {
+                const elementPosition = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                
+                if (elementPosition < windowHeight - 100) {
+                    element.style.opacity = 1;
+                    
+                    if (element.classList.contains('slide-up')) {
+                        element.style.transform = 'translateY(0)';
+                    }
+                }
+            });
+        };
+
+        // Set initial state for animations
+        document.querySelectorAll('.slide-up').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        });
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = 0;
+            el.style.transition = 'opacity 0.6s ease';
+        });
+
+        // Listen for scroll events
+        window.addEventListener('scroll', animateOnScroll);
+        
+        // Trigger once on page load
+        window.addEventListener('load', animateOnScroll);
+        animateOnScroll();
+
+        // Cookie Consent Functionality
+        const cookieConsent = document.getElementById('cookieConsent');
+        const cookieAccept = document.getElementById('cookieAccept');
+        const cookieReject = document.getElementById('cookieReject');
+
+        if (!localStorage.getItem('cookieConsent')) {
+            cookieConsent.classList.remove('hidden');
+        }
+
+        cookieAccept.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            cookieConsent.classList.add('hidden');
+        });
+
+        cookieReject.addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'rejected');
+            cookieConsent.classList.add('hidden');
+        });
+
+        // Add hover effect to service cards
+        document.querySelectorAll('.card-hover').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-8px)';
+                this.style.boxShadow = '0 25px 50px -12px rgba(0, 0, 0, 0.25)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = '';
+                this.style.boxShadow = '';
+            });
+        });
+    </script>
+</body>
+</html>
